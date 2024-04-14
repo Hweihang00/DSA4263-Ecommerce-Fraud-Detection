@@ -29,17 +29,22 @@ The exponential growth of e-commerce platforms has brought a corresponding rise 
 │   │   ├── IpAddress_to_Country.csv
 │   ├── processed/
 │   │   ├── df.xlsx
+├── descriptions/
+│   ├── datadictionary.txt
 ├── LICENSE
 ├── README.md
+├── requirements.txt
 ├── ecommerce_fraud.ipynb
 └── main.ipynb
 ```
 
-* `data` - Contains the raw and processed data files where `Fraud_Data.csv` and `IpAddress_to_Country` are the raw data files and `df.xlsx` is the processed data file after feature selection and engineering.
+* `data` - Contains the raw and processed data files where `Fraud_Data.csv` and `IpAddress_to_Country.csv` are the raw data files under `raw/` folder and `df.xlsx` is the processed data file after feature selection and engineering under `processed/` folder. 
 
-* `ecommerce_fraud.ipynb` - Contains the ipynb file that was used for exploratory data analysis.
+* `descriptions` - Contains `datadictionary.txt` which is the txt file that has detailed information about the content and attribute of data within the dataset.
 
-* `main.ipynb` - Contains the ipynb file of the training of the machine learning models as well as the evaluation of model performance.
+* `ecommerce_fraud.ipynb` - Contains the ipynb file of the training of the machine learning models as well as the evaluation of model performance.
+
+* `main.ipynb` - Contains the ipynb file that was used for exploratory data analysis.
 
 
 ## Software Requirements
@@ -57,9 +62,47 @@ git clone https://github.com/Hweihang00/DSA4263-Ecommerce-Fraud-Detection.git
 
 After it has been successfully cloned, you should see a folder `DSA4263-Ecommerce-Fraud-Detection` created.
 
+### Install Software / Packages
+
+After the repository has been cloned over successfully, run the following commands to install the relevant software or packages.
+
+1. **Installing packages required**
+
+*(If you are running on Windows, change `pip3` to `pip`)*
+
+Ensure that you are within the `DSA4263-Ecommerce-Fraud-Detection` folder before running the following command.
+
+```bash
+pip3 install -r requirements.txt
+```
+
 ## Data
 ### Description
 The dataset, sourced from Kaggle, consists of two CSV files: Fraud_Data.csv and IpAddress_to_Country.csv. Fraud_Data.csv contains 151,112 entries across 11 columns, including a class label indicating fraud (1) or non-fraud (0). Key features, such as sign-up and purchase times, offer insights into fraudulent behavior. Additional features like User ID, Device ID, and IP address aid in detecting suspicious activities. The class distribution shows a significant imbalance, with fraudulent transactions representing only 9% of the dataset.
+
+### Data Dictionary
+| Feature Name            | Data Type | Description                                                                                                      |
+|-------------------------|-----------|------------------------------------------------------------------------------------------------------------------|
+| purchase_value          | Integer   | The value of the item purchased in the transaction                                                                |
+| age                     | Integer   | The age of the user who made the transaction                                                                       |
+| class                   | Integer   | A binary column that indicates whether the transaction was fraudulent or non-fraudulent                          |
+| signup_month            | Integer   | The month that the user who made the transaction signed up to the e-commerce platform                              |
+| signup_day              | Integer   | The day that the user who made the transaction signed up to the e-commerce platform                                |
+| purchase_day            | Integer   | The day that the user made the transaction                                                                          |
+| signup_purchase_time_diff | Integer | The time difference in seconds between the timestamp of when the user signed up to the platform and when they made this transaction |
+| num_users_per_device    | Integer   | The count of unique user IDs associated with the same device ID across transactions for the device ID that made the transaction           |
+| num_unique_ips_per_device | Integer | The count of unique user IP Addresses associated with the same device ID across transactions for the device ID that made the transaction     |
+| high_value_purchase     | Integer   | A flag for transactions where the purchase value exceeds twice the average purchase value associated with the respective device ID for the device ID that made the transaction             |
+| frequent_purchase       | Integer   | A flag that indicates whether the purchase value of this transaction falls within the top three most frequently occurring values in the dataset          |
+| browser_Chrome          | Integer   | Indicates if the browser used for this transaction is Chrome (1) or otherwise (0)                                 |
+| browser_FireFox         | Integer   | Indicates if the browser used for this transaction is Firefox(1) or otherwise (0)                                  |
+| browser_Opera           | Integer   | Indicates if the browser used for this transaction is Opera(1) or otherwise (0)                                    |
+| browser_Safari          | Integer   | Indicates if the browser used for this transaction is Safari(1) or otherwise (0)                                   |
+| sex_F                   | Integer   | Indicates if the gender of the user who made this transaction is Female (1) or otherwise (0)                     |
+| source_Ads              | Integer   | Indicates if the source that the user who made the transaction came to the platform is through Ads (1) or otherwise (0)                     |
+| source_Direct           | Integer   | Indicates if the source that the user who made the transaction came to the platform Direct (1) or otherwise (0)                     |
+| country_encoded         | Float     | Indicates a numerical encoding of the 'country' feature after one-hot encoding. Each country is assigned a unique numerical value               |
+
 
 - Kaggle dataset: [link](https://www.kaggle.com/datasets/vbinh002/fraud-ecommerce/data)
 

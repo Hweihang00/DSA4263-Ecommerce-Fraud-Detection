@@ -1,0 +1,20 @@
+Feature Name, Data Type, Description
+purchase_value, Integer, The value of the item purchased in the transaction
+age, Integer, The age of the user who made the transaction
+class, Integer, A binary column that indicates whether the transaction was fraudulent or non-fraudulent
+signup_month, Integer, The month that the user who made the transaction signed up to the e-commerce platform
+signup_day, Integer, The day that the user who made the transaction signed up to the e-commerce platform
+purchase_day, Integer, The day that the user made the transaction
+signup_purchase_time_diff, Integer, The time difference in seconds between the timestamp of when the user signed up to the platform and when they made this transaction
+num_users_per_device, Integer, The count of unique user IDs associated with the same device ID across transactions for the device ID that made the transaction
+num_unique_ips_per_device, Integer, The count of unique user IP Addresses associated with the same device ID across transactions for the device ID that made the transaction
+high_value_purchase, Integer, A flag for transactions where the purchase value exceeds twice the average purchase value associated with the respective device ID for the device ID that made the transaction
+frequent_purchase, Integer, A flag that indicates whether the purchase value of this transaction falls within the top three most frequently occurring values in the dataset
+browser_Chrome, Integer, Indicates if the browser used for this transaction is Chrome (1) or otherwise (0)
+browser_FireFox, Integer, Indicates if the browser used for this transaction is Firefox(1) or otherwise (0)
+browser_Opera, Integer, Indicates if the browser used for this transaction is Opera(1) or otherwise (0)
+browser_Safari, Integer, Indicates if the browser used for this transaction is Safari(1) or otherwise (0)
+sex_F, Integer, Indicates if the gender of the user who made this transaction is Female (1) or otherwise (0)
+source_Ads, Integer, Indicates if the source that the user who made the transaction came to the platform is through Ads (1) or otherwise (0)
+source_Direct, Integer, Indicates if the source that the user who made the transaction came to the platform Direct (1) or otherwise (0)
+country_encoded, Float, Indicates a numerical encoding of the 'country' feature after one-hot encoding. Each country is assigned a unique numerical value
