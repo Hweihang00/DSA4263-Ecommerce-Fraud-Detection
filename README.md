@@ -28,23 +28,26 @@ The exponential growth of e-commerce platforms has brought a corresponding rise 
 │   │   ├── Fraud_Data.csv
 │   │   ├── IpAddress_to_Country.csv
 │   ├── processed/
-│   │   ├── df.xlsx
+│   │   ├── df.csv
 ├── descriptions/
 │   ├── datadictionary.txt
+├── notebooks/
+│   ├── ecommerce_fraud.ipynb
+│   ├── main.ipynb
 ├── LICENSE
 ├── README.md
-├── requirements.txt
-├── ecommerce_fraud.ipynb
-└── main.ipynb
+└── requirements.txt
 ```
 
-* `data` - Contains the raw and processed data files where `Fraud_Data.csv` and `IpAddress_to_Country.csv` are the raw data files under `raw/` folder and `df.xlsx` is the processed data file after feature selection and engineering under `processed/` folder. 
+* `data` - Contains the raw and processed data files where `Fraud_Data.csv` and `IpAddress_to_Country.csv` are the raw data files under `raw/` folder and `df.csv` is the processed data file after feature selection and engineering under `processed/` folder. 
 
 * `descriptions` - Contains `datadictionary.txt` which is the txt file that has detailed information about the content and attribute of data within the dataset.
 
-* `ecommerce_fraud.ipynb` - Contains the ipynb file of the training of the machine learning models as well as the evaluation of model performance.
+* `ecommerce_fraud.ipynb` - The .ipynb file that contains the initial data exploratory analysis for all members.
 
-* `main.ipynb` - Contains the ipynb file that was used for exploratory data analysis.
+* `main.ipynb` - The .ipynb file that contains data preprocessing, exploratory data analysis, feature engineering as well as all the models and evaluation.
+
+* `requirements.txt` - Contains the Python libraries that needs to be downloaded within the machine for the notebook to work.
 
 
 ## Software Requirements
@@ -108,17 +111,18 @@ The dataset, sourced from Kaggle, consists of two CSV files: Fraud_Data.csv and 
 
 
 ## Models
-The baseline models we attempted were Logistic Regression, Decision Trees, and Neural Network. We implemented challenger models such as Random Forest and XGBoost for comparision.
+The baseline models we attempted were Logistic Regression and Decision Trees. We implemented challenger models such as Random Forest, XGBoost, and Neural Network for comparision.
 
 ## Results
 We will be predominantly focusing on the model's performance in terms of recall as recall captures the model’s ability to correctly identify fraudulent transactions among all actual fraudulent transactions.
 
 - Baseline Models
-  - Logistic Regression: Accuracy of 90.6%, 0.0% for Precision, Recall, F1 score.
+  - Logistic Regression: Accuracy of 90.6%, 0.0% for Precision, Recall, F1 Score.
   - Decision Trees: Accuracy of 91.9%, Precision of 56.6%, Recall of 58.8%, F1 Score of 57.7%
 - Challenger Models
   - Random Forest: Accuracy of 95%, Precision of 81.7%, Recall of 59.4%, F1 Score of 68.8%
-  - XGBoost: Accuracy of 91.5%, Precision of 53.5%, Recall of 71.6%, F1 score of 61.2%
+  - XGBoost: Accuracy of 91.5%, Precision of 53.5%, Recall of 71.6%, F1 Score of 61.2%
+  - Neural Network: Accuracy of 91%, Precision of 53%, Recall of 71%, F1 Score 61%
 
 ## Team Members
 

@@ -5,3 +5,7 @@ matplotlib
 seaborn
 category_encoders
 scikit-learn
+xgboost
+imbalanced-learn
+tensorflow
+
