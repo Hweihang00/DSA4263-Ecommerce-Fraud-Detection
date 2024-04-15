@@ -43,8 +43,6 @@ The exponential growth of e-commerce platforms has brought a corresponding rise 
 
 * `descriptions` - Contains `datadictionary.txt` which is the txt file that has detailed information about the content and attribute of data within the dataset.
 
-* `ecommerce_fraud.ipynb` - The .ipynb file that contains the initial data exploratory analysis for all members.
-
 * `main.ipynb` - The .ipynb file that contains data preprocessing, exploratory data analysis, feature engineering as well as all the models and evaluation.
 
 * `requirements.txt` - Contains the Python libraries that needs to be downloaded within the machine for the notebook to work.
