@@ -32,7 +32,6 @@ The exponential growth of e-commerce platforms has brought a corresponding rise 
 ├── descriptions/
 │   ├── datadictionary.txt
 ├── notebooks/
-│   ├── ecommerce_fraud.ipynb
 │   ├── main.ipynb
 ├── LICENSE
 ├── README.md
